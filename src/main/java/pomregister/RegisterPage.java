@@ -14,12 +14,16 @@ public class RegisterPage {
     private By fieldEmail = By.xpath("//fieldset[@class='Auth_fieldset__1QzWN mb-6']//label[text()='Email']/following-sibling::input[@type='text' and @name='name']");
     private By fieldPassword = By.xpath("//input[@type='password' and @name='Пароль']");
     private By incorrectPasswordSign = By.xpath("//p[text()='Некорректный пароль']");
+    private By buttonEnterRegisterPage = By.xpath("//a[text()='Войти']");
 
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
     }
     public void clickRegisterButtonSuccess() {
         driver.findElement(registerButtonSuccess).click();
+    }
+    public void clickButtonEnterRegisterPage() {
+        driver.findElement(buttonEnterRegisterPage).click();
     }
     public void fillNameField(String name) {
         driver.findElement(fieldName).sendKeys(name);
