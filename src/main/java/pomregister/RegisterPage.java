@@ -2,13 +2,18 @@ package pomregister;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class RegisterPage {
     private WebDriver driver;
     private By registerButtonSuccess = By.xpath("//button[text()='Зарегистрироваться']");
-    private By fieldName = By.xpath("//label[text()='Имя']");
-    private By fieldEmail = By.xpath("//label[text()='Email']");
-    private By fieldPassword = By.xpath("//label[text()='Пароль']");
+    private By fieldName = By.xpath("//input[@name='name']");
+    private By fieldEmail = By.xpath("//fieldset[@class='Auth_fieldset__1QzWN mb-6']//label[text()='Email']/following-sibling::input[@type='text' and @name='name']");
+    private By fieldPassword = By.xpath("//input[@type='password' and @name='Пароль']");
+    private By incorrectPasswordSign = By.xpath("//p[text()='Некорректный пароль']");
 
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
@@ -24,5 +29,10 @@ public class RegisterPage {
     }
     public void fillPasswordField(String password) {
         driver.findElement(fieldPassword).sendKeys(password);
+    }
+    public void checkVisibilityIncorrectPasswordText() {
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()='Некорректный пароль']")));
+        assert driver.findElement(incorrectPasswordSign).isDisplayed();
     }
 }
