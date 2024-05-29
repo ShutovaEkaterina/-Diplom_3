@@ -13,7 +13,7 @@ import userpackage.UserResponse;
 
 public class SuccessRegisterTest {
     private final UserPath userPath = new UserPath();
-   private final UserResponse userResponse = new UserResponse();
+    private final UserResponse userResponse = new UserResponse();
     private String accessToken;
 
     @Rule
@@ -43,9 +43,9 @@ public class SuccessRegisterTest {
 
         RegisterPage registerPagePage = new RegisterPage(driver);
 
-        String name = "Игнкаsти";
-        String email = "efddsdee@example.com";
-        String password = "12211dj1nf34";
+        String name = "Игнкаdsти";
+        String email = "efddsdeed@example.com";
+        String password = "1221d1dj1nf34";
 
         registerPagePage.fillNameField(name);
 
@@ -55,11 +55,19 @@ public class SuccessRegisterTest {
 
         registerPagePage.clickRegisterButtonSuccess();
 
-       // LocalStorage localStorage = ((WebStorage) driver).getLocalStorage();
-        //accessToken = localStorage.getItem("accessToken");
-        //System.out.println(accessToken);
-
         loginPagePage.checkVisibilityEnterText();
+
+        //Теперь мы залогиним юзера для того, чтобы потом удалить
+
+        loginPagePage.fillEmailFieldLogin(email);
+        loginPagePage.fillPasswordFieldLogin(password);
+        loginPagePage.clickButtonEnterLoginPage();
+
+        mainPagePage.checkVisibilityTextMainPage();
+
+        LocalStorage localStorage = ((WebStorage) driver).getLocalStorage();
+        accessToken = localStorage.getItem("accessToken");
+        System.out.println(accessToken);
 
     }
 }

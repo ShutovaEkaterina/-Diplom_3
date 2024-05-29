@@ -13,7 +13,7 @@ public class BunSauceFillingTest {
 
         WebDriver driver = driverFarm.getDriver();
 
-        driver.get("https://stellarburgers.nomoreparties.site/");
+        driver.get("https://stellarburgers.nomoreparties.site");
 
         MainPage mainPagePage = new MainPage(driver);
         mainPagePage.clickSaucesLink();
