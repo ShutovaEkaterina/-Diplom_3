@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class RegisterPage {
     private WebDriver driver;
-    private By registerButtonSuccess = By.xpath("//button[text()='Зарегистрироваться']");
+    private By registerButtonSuccess = By.xpath("//button[contains(@class, 'button_button') and text()='Зарегистрироваться']");
     private By fieldName = By.xpath("//input[@name='name']");
     private By fieldEmail = By.xpath("//fieldset[@class='Auth_fieldset__1QzWN mb-6']//label[text()='Email']/following-sibling::input[@type='text' and @name='name']");
     private By fieldPassword = By.xpath("//input[@type='password' and @name='Пароль']");

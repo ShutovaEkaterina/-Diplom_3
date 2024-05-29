@@ -28,9 +28,9 @@ public class DriverFarm extends ExternalResource {
     }
 
     private void initYandex() {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().driverVersion("120.0.6099.109").setup();
         ChromeOptions options = new ChromeOptions();
-        options.setBinary("/path/to/yandex/browser"); // Укажите путь к исполняемому файлу Yandex браузера
+        options.setBinary("/Applications/Yandex.app"); // Укажите путь к исполняемому файлу Yandex браузера
         driver = new ChromeDriver(options);
     }
 
