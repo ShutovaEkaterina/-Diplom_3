@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Rule;
@@ -26,7 +27,7 @@ public class SuccessRegisterTest {
             userResponse.deletedSuccesfully(response);
         }
     }
-
+    @DisplayName("User is registering successfully")
     @Test
     public void testSuccessRegister() {
 

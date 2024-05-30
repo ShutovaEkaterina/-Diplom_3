@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -38,6 +39,7 @@ public class LogoutTest {
         }
     }
 //тест упадет, так как текст кнопки для выхода отличается в задании
+    @DisplayName("Logout")
     @Test
     public void testLogout() {
 

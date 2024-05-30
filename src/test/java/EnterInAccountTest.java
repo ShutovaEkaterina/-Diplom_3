@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -39,7 +40,7 @@ public class EnterInAccountTest {
             userResponse.deletedSuccesfully(response);
         }
     }
-
+    @DisplayName("Login through enter button on main page")
     @Test
     public void testEnterInAccount() {
 

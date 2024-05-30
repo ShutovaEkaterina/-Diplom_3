@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +9,9 @@ import pomregister.RegisterPage;
 public class BadPasswordRegisterTest {
     @Rule
     public DriverFarm driverFarm = new DriverFarm();
-
+    @DisplayName("Register with short password")
     @Test
-    public void testSuccessRegister() {
+    public void testBadPasswordRegister() {
 
         WebDriver driver = driverFarm.getDriver();
 

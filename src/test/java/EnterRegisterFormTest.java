@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -37,7 +38,7 @@ public class EnterRegisterFormTest {
             userResponse.deletedSuccesfully(response);
         }
     }
-
+    @DisplayName("Login through register form page")
     @Test
     public void testEnterInAccount() {
 

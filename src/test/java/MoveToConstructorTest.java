@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -40,7 +41,7 @@ public class MoveToConstructorTest {
             userResponse.deletedSuccesfully(response);
         }
     }
-
+    @DisplayName("Move to constructor")
     @Test
     public void testMoveToPrivateAccount() {
 

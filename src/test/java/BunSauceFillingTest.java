@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 public class BunSauceFillingTest {
     @Rule
     public DriverFarm driverFarm = new DriverFarm();
-
+    @DisplayName("Ingredient tabs changing")
     @Test
     public void testBunSauceFilling() {
 

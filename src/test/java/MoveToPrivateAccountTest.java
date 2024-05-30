@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -38,7 +39,7 @@ public class MoveToPrivateAccountTest {
             userResponse.deletedSuccesfully(response);
         }
     }
-
+    @DisplayName("Move to private account")
     @Test
     public void testMoveToPrivateAccount() {
 
