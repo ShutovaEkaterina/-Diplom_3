@@ -36,6 +36,8 @@ public class SuccessRegisterTest {
 
         MainPage mainPagePage = new MainPage(driver);
 
+        mainPagePage.waitForPersonalAccountToBeClickable();
+
         mainPagePage.clickPersonalAccount();
 
         LoginPage loginPagePage = new LoginPage(driver);
@@ -43,9 +45,9 @@ public class SuccessRegisterTest {
 
         RegisterPage registerPagePage = new RegisterPage(driver);
 
-        String name = "Игнкаdsти";
-        String email = "efddsdeed@example.com";
-        String password = "1221d1dj1nf34";
+        String name = "Игнкsыаddssти";
+        String email = "efddsdssdseed@example.com";
+        String password = "122sddsd1dj1nf34";
 
         registerPagePage.fillNameField(name);
 

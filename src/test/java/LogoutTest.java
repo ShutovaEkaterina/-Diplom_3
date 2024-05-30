@@ -46,6 +46,7 @@ public class LogoutTest {
         driver.get("https://stellarburgers.nomoreparties.site");
 
         MainPage mainPagePage = new MainPage(driver);
+        mainPagePage.waitForButtonEnterMainPageToBeClickable();
         mainPagePage.clickButtonEnterMainPage();
 
         LoginPage loginPagePage = new LoginPage(driver);
@@ -54,6 +55,7 @@ public class LogoutTest {
         loginPagePage.clickButtonEnterLoginPage();
 
         mainPagePage.checkVisibilityTextMainPage();
+        mainPagePage.waitForPersonalAccountToBeClickable();
         mainPagePage.clickPersonalAccount();
 
         PrivateAccount privateAccountPage = new PrivateAccount(driver);

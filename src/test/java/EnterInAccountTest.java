@@ -48,6 +48,7 @@ public class EnterInAccountTest {
         driver.get("https://stellarburgers.nomoreparties.site/");
 
         MainPage mainPagePage = new MainPage(driver);
+        mainPagePage.waitForButtonEnterMainPageToBeClickable();
         mainPagePage.clickButtonEnterMainPage();
 
         LoginPage loginPagePage = new LoginPage(driver);

@@ -17,6 +17,7 @@ public class BadPasswordRegisterTest {
         driver.get("https://stellarburgers.nomoreparties.site/");
 
         MainPage mainPagePage = new MainPage(driver);
+        mainPagePage.waitForPersonalAccountToBeClickable();
 
         mainPagePage.clickPersonalAccount();
 

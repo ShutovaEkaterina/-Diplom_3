@@ -25,6 +25,10 @@ public class RegisterPage {
     public void clickButtonEnterRegisterPage() {
         driver.findElement(buttonEnterRegisterPage).click();
     }
+    public void waitForButtonEnterRegisterPageToBeClickable() {
+        new WebDriverWait(driver, Duration.ofSeconds(40))
+                .until(ExpectedConditions.elementToBeClickable(buttonEnterRegisterPage));
+    }
     public void fillNameField(String name) {
         driver.findElement(fieldName).sendKeys(name);
     }

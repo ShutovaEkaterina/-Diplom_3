@@ -46,6 +46,7 @@ public class EnterRegisterFormTest {
         driver.get("https://stellarburgers.nomoreparties.site/register");
 
         RegisterPage registerPagePage = new RegisterPage(driver);
+        registerPagePage.waitForButtonEnterRegisterPageToBeClickable();
         registerPagePage.clickButtonEnterRegisterPage();
 
         LoginPage loginPagePage = new LoginPage(driver);

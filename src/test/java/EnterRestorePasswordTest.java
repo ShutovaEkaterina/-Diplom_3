@@ -50,8 +50,6 @@ public class EnterRestorePasswordTest {
         restorePasswordPagePage.clickButtonEnterRestorePasswordPage();
 
         LoginPage loginPagePage = new LoginPage(driver);
-        String email = "wewew@example.com";
-        String password = "1111111";
         loginPagePage.fillEmailFieldLogin(email);
         loginPagePage.fillPasswordFieldLogin(password);
         loginPagePage.clickButtonEnterLoginPage();
