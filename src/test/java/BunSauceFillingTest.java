@@ -38,14 +38,19 @@ public class BunSauceFillingTest {
 
         // Проверка, что у выбранного элемента из таба ингредиентов есть класс "current"
         //assertTrue(mainPagePage.checkCurrentAttribute());
+        mainPagePage.waitForModalOverlayToDisappear();
         mainPagePage.waitForFillingsLinkToBeClickable();
-        mainPagePage.clickFillingsLink();
+        MainPage.JSUtils.clickElementByJS(driver, mainPagePage.fillingsLink);
+        //mainPagePage.clickFillingsLink();
         mainPagePage.checkVisibilityFillingsText();
+        mainPagePage.scrollToElement(mainPagePage.saucesLink);
         mainPagePage.waitForSaucesLinkToBeClickable();
-        mainPagePage.clickSaucesLink();
+        MainPage.JSUtils.clickElementByJS(driver, mainPagePage.saucesLink);
+        //mainPagePage.clickSaucesLink();
         mainPagePage.checkVisibilitySaucesText();
         mainPagePage.waitForBunsLinkToBeClickable();
-        mainPagePage.clickBunsLink();
+        MainPage.JSUtils.clickElementByJS(driver, mainPagePage.bunsLink);
+        //mainPagePage.clickBunsLink();
         mainPagePage.checkVisibilityBunsText();
     }
 }

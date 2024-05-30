@@ -47,7 +47,10 @@ public class EnterRestorePasswordTest {
         driver.get("https://stellarburgers.nomoreparties.site/forgot-password");
 
         RestorePasswordPage restorePasswordPagePage = new RestorePasswordPage(driver);
-        restorePasswordPagePage.clickButtonEnterRestorePasswordPage();
+        restorePasswordPagePage.waitForModalOverlayToDisappear();
+        restorePasswordPagePage.scrollToElement(restorePasswordPagePage.buttonEnterRestorePasswordPage);
+        MainPage.JSUtils.clickElementByJS(driver, restorePasswordPagePage.buttonEnterRestorePasswordPage);
+        //restorePasswordPagePage.clickButtonEnterRestorePasswordPage();
 
         LoginPage loginPagePage = new LoginPage(driver);
         loginPagePage.fillEmailFieldLogin(email);

@@ -17,9 +17,10 @@ public class BadPasswordRegisterTest {
         driver.get("https://stellarburgers.nomoreparties.site/");
 
         MainPage mainPagePage = new MainPage(driver);
+        mainPagePage.waitForModalOverlayToDisappear();
         mainPagePage.waitForPersonalAccountToBeClickable();
-
-        mainPagePage.clickPersonalAccount();
+        MainPage.JSUtils.clickElementByJS(driver, mainPagePage.personalAccount);
+       // mainPagePage.clickPersonalAccount();
 
         LoginPage loginPagePagePage = new LoginPage(driver);
         loginPagePagePage.clickRegisterButton();

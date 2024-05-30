@@ -14,6 +14,8 @@ import userpackage.User;
 import userpackage.UserPath;
 import userpackage.UserResponse;
 
+import java.util.concurrent.TimeUnit;
+
 public class MoveToConstructorTest {
     private final UserPath userPath = new UserPath();
     private final UserResponse userResponse = new UserResponse();
@@ -46,9 +48,12 @@ public class MoveToConstructorTest {
 
         driver.get("https://stellarburgers.nomoreparties.site");
 
+
         MainPage mainPagePage = new MainPage(driver);
+        mainPagePage.waitForModalOverlayToDisappear();
         mainPagePage.waitForButtonEnterMainPageToBeClickable();
-        mainPagePage.clickButtonEnterMainPage();
+        MainPage.JSUtils.clickElementByJS(driver, mainPagePage.buttonEnterMainPage);
+        //mainPagePage.clickButtonEnterMainPage();
 
         LoginPage loginPagePage = new LoginPage(driver);
         loginPagePage.fillEmailFieldLogin(email);
@@ -56,8 +61,11 @@ public class MoveToConstructorTest {
         loginPagePage.clickButtonEnterLoginPage();
 
         mainPagePage.checkVisibilityTextMainPage();
+        mainPagePage.waitForModalOverlayToDisappear();
+        mainPagePage.scrollToElement(mainPagePage.personalAccount);
         mainPagePage.waitForPersonalAccountToBeClickable();
-        mainPagePage.clickPersonalAccount();
+        MainPage.JSUtils.clickElementByJS(driver, mainPagePage.personalAccount);
+       // mainPagePage.clickPersonalAccount();
 
         PrivateAccount privateAccountPage = new PrivateAccount(driver);
         privateAccountPage.checkVisibilityHistoryOrdersText();
