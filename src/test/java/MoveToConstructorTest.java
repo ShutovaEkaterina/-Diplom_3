@@ -15,8 +15,6 @@ import userpackage.User;
 import userpackage.UserPath;
 import userpackage.UserResponse;
 
-import java.util.concurrent.TimeUnit;
-
 public class MoveToConstructorTest {
     private final UserPath userPath = new UserPath();
     private final UserResponse userResponse = new UserResponse();
@@ -54,7 +52,6 @@ public class MoveToConstructorTest {
         mainPagePage.waitForModalOverlayToDisappear();
         mainPagePage.waitForButtonEnterMainPageToBeClickable();
         MainPage.JSUtils.clickElementByJS(driver, mainPagePage.buttonEnterMainPage);
-        //mainPagePage.clickButtonEnterMainPage();
 
         LoginPage loginPagePage = new LoginPage(driver);
         loginPagePage.fillEmailFieldLogin(email);
@@ -66,7 +63,6 @@ public class MoveToConstructorTest {
         mainPagePage.scrollToElement(mainPagePage.personalAccount);
         mainPagePage.waitForPersonalAccountToBeClickable();
         MainPage.JSUtils.clickElementByJS(driver, mainPagePage.personalAccount);
-       // mainPagePage.clickPersonalAccount();
 
         PrivateAccount privateAccountPage = new PrivateAccount(driver);
         privateAccountPage.checkVisibilityHistoryOrdersText();

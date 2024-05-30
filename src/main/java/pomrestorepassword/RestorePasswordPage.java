@@ -19,9 +19,6 @@ public class RestorePasswordPage {
     public RestorePasswordPage(WebDriver driver) {
         this.driver = driver;
     }
-    public void clickButtonEnterRestorePasswordPage() {
-        driver.findElement(buttonEnterRestorePasswordPage).click();
-    }
     @Step("Waiting modal is disappearing")
     public void waitForModalOverlayToDisappear() {
         new WebDriverWait(driver, Duration.ofSeconds(10))

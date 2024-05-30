@@ -9,7 +9,6 @@ import org.openqa.selenium.html5.LocalStorage;
 import org.openqa.selenium.html5.WebStorage;
 import pomlogin.LoginPage;
 import pommainpackage.MainPage;
-import pomregister.RegisterPage;
 import pomrestorepassword.RestorePasswordPage;
 import userpackage.User;
 import userpackage.UserPath;
@@ -51,7 +50,6 @@ public class EnterRestorePasswordTest {
         restorePasswordPagePage.waitForModalOverlayToDisappear();
         restorePasswordPagePage.scrollToElement(restorePasswordPagePage.buttonEnterRestorePasswordPage);
         MainPage.JSUtils.clickElementByJS(driver, restorePasswordPagePage.buttonEnterRestorePasswordPage);
-        //restorePasswordPagePage.clickButtonEnterRestorePasswordPage();
 
         LoginPage loginPagePage = new LoginPage(driver);
         loginPagePage.fillEmailFieldLogin(email);

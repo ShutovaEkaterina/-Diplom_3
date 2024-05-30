@@ -10,7 +10,6 @@ import org.openqa.selenium.html5.WebStorage;
 import pomPrivateAccount.PrivateAccount;
 import pomlogin.LoginPage;
 import pommainpackage.MainPage;
-import pomregister.RegisterPage;
 import userpackage.User;
 import userpackage.UserPath;
 import userpackage.UserResponse;
@@ -51,7 +50,6 @@ public class MoveToPrivateAccountTest {
         mainPagePage.waitForModalOverlayToDisappear();
         mainPagePage.waitForButtonEnterMainPageToBeClickable();
         MainPage.JSUtils.clickElementByJS(driver, mainPagePage.buttonEnterMainPage);
-        //mainPagePage.clickButtonEnterMainPage();
 
         LoginPage loginPagePage = new LoginPage(driver);
         loginPagePage.fillEmailFieldLogin(email);
@@ -63,7 +61,6 @@ public class MoveToPrivateAccountTest {
         mainPagePage.scrollToElement(mainPagePage.personalAccount);
         mainPagePage.waitForPersonalAccountToBeClickable();
         MainPage.JSUtils.clickElementByJS(driver, mainPagePage.personalAccount);
-        //mainPagePage.clickPersonalAccount();
 
         PrivateAccount privateAccountPage = new PrivateAccount(driver);
         privateAccountPage.checkVisibilityHistoryOrdersText();

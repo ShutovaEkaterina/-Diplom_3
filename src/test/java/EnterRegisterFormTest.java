@@ -50,7 +50,6 @@ public class EnterRegisterFormTest {
         registerPagePage.waitForModalOverlayToDisappear();
         registerPagePage.waitForButtonEnterRegisterPageToBeClickable();
         MainPage.JSUtils.clickElementByJS(driver, registerPagePage.buttonEnterRegisterPage);
-        //registerPagePage.clickButtonEnterRegisterPage();
 
         LoginPage loginPagePage = new LoginPage(driver);
 

@@ -36,18 +36,6 @@ public class MainPage {
         new WebDriverWait(driver, Duration.ofSeconds(100))
                 .until(ExpectedConditions.elementToBeClickable(personalAccount));
     }
-
-    public void clickBunsLink() {
-        driver.findElement(bunsLink).click();
-    }
-
-    public void clickSaucesLink() {
-        driver.findElement(saucesLink).click();
-    }
-
-    public void clickFillingsLink() {
-        driver.findElement(fillingsLink).click();
-    }
     @Step("Waiting before element buns text will be clickable")
     public void checkVisibilityBunsText() {
         new WebDriverWait(driver, Duration.ofSeconds(10))
@@ -67,9 +55,6 @@ public class MainPage {
         assert driver.findElement(fillingsText).isDisplayed();
     }
 
-    public void clickButtonEnterMainPage() {
-        driver.findElement(buttonEnterMainPage).click();
-    }
     @Step("Waiting before element Войти в аккаунт will be clickable")
     public void waitForButtonEnterMainPageToBeClickable() {
         new WebDriverWait(driver, Duration.ofSeconds(100))

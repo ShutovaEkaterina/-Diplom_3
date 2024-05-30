@@ -51,7 +51,6 @@ public class LogoutTest {
         mainPagePage.waitForModalOverlayToDisappear();
         mainPagePage.waitForButtonEnterMainPageToBeClickable();
         MainPage.JSUtils.clickElementByJS(driver, mainPagePage.buttonEnterMainPage);
-        //mainPagePage.clickButtonEnterMainPage();
 
         LoginPage loginPagePage = new LoginPage(driver);
         loginPagePage.fillEmailFieldLogin(email);
@@ -63,7 +62,6 @@ public class LogoutTest {
         mainPagePage.scrollToElement(mainPagePage.personalAccount);
         mainPagePage.waitForPersonalAccountToBeClickable();
         MainPage.JSUtils.clickElementByJS(driver, mainPagePage.personalAccount);
-        //mainPagePage.clickPersonalAccount();
 
         PrivateAccount privateAccountPage = new PrivateAccount(driver);
         privateAccountPage.checkVisibilityHistoryOrdersText();

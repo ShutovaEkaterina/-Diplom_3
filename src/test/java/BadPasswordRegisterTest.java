@@ -21,7 +21,6 @@ public class BadPasswordRegisterTest {
         mainPagePage.waitForModalOverlayToDisappear();
         mainPagePage.waitForPersonalAccountToBeClickable();
         MainPage.JSUtils.clickElementByJS(driver, mainPagePage.personalAccount);
-       // mainPagePage.clickPersonalAccount();
 
         LoginPage loginPagePagePage = new LoginPage(driver);
         loginPagePagePage.clickRegisterButton();

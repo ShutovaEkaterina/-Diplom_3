@@ -27,9 +27,6 @@ public class RegisterPage {
     public void clickRegisterButtonSuccess() {
         driver.findElement(registerButtonSuccess).click();
     }
-    public void clickButtonEnterRegisterPage() {
-        driver.findElement(buttonEnterRegisterPage).click();
-    }
     @Step("Waiting before button Войти will be visible")
     public void waitForButtonEnterRegisterPageToBeClickable() {
         new WebDriverWait(driver, Duration.ofSeconds(40))

@@ -13,8 +13,6 @@ import userpackage.User;
 import userpackage.UserPath;
 import userpackage.UserResponse;
 
-import static org.junit.Assert.assertNotNull;
-
 public class EnterInAccountTest {
     private final UserPath userPath = new UserPath();
     private final UserResponse userResponse = new UserResponse();
@@ -52,7 +50,7 @@ public class EnterInAccountTest {
         mainPagePage.waitForModalOverlayToDisappear();
         mainPagePage.waitForButtonEnterMainPageToBeClickable();
         MainPage.JSUtils.clickElementByJS(driver, mainPagePage.buttonEnterMainPage);
-        //mainPagePage.clickButtonEnterMainPage();
+
 
         LoginPage loginPagePage = new LoginPage(driver);
         loginPagePage.fillEmailFieldLogin(email);

@@ -49,7 +49,6 @@ public class EnterPersonalAccountTest {
         mainPagePage.waitForModalOverlayToDisappear();
         mainPagePage.waitForPersonalAccountToBeClickable();
         MainPage.JSUtils.clickElementByJS(driver, mainPagePage.personalAccount);
-        //mainPagePage.clickPersonalAccount();
 
         LoginPage loginPagePage = new LoginPage(driver);
 
