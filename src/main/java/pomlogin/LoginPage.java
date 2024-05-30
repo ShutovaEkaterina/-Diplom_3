@@ -1,5 +1,6 @@
 package pomlogin;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,18 +19,23 @@ public class LoginPage {
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
+    @Step("Click on register button")
     public void clickRegisterButton() {
         driver.findElement(registerButton).click();
     }
+    @Step("Click on enter button")
     public void clickButtonEnterLoginPage() {
         driver.findElement(buttonEnterLoginPage).click();
     }
+    @Step("Fill up email field")
     public void fillEmailFieldLogin(String email) {
         driver.findElement(emailLoginField).sendKeys(email);
     }
+    @Step("Fill up password field")
     public void fillPasswordFieldLogin(String email) {
         driver.findElement(passwordLoginField).sendKeys(email);
     }
+    @Step("Waiting before element Вход will be visible")
     public void checkVisibilityEnterText() {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='Вход']")));
