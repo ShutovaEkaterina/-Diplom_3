@@ -12,16 +12,12 @@ import java.time.Duration;
 
 public class MainPage {
     private WebDriver driver;
-
+    public By saucesTab = By.cssSelector(".tab_tab__1SPyG:nth-child(2)");
+    public By fillingsTab = By.cssSelector(".tab_tab__1SPyG:nth-child(3)");
+    public By bunsTab = By.cssSelector(".tab_tab__1SPyG:nth-child(1)");
     public By personalAccount = By.xpath("//p[text()='Личный Кабинет']");
     public By buttonEnterMainPage = By.xpath("//button[text()='Войти в аккаунт']");
     private By textMainPage = By.xpath("//h1[text()='Соберите бургер']");
-    public By bunsLink = By.xpath("//div[contains(@style, 'display: flex;')]/div[contains(span/text(), 'Булки')]");
-    public By saucesLink = By.xpath("//div[contains(@style, 'display: flex;')]/div[contains(span/text(), 'Соусы')]");
-    public By fillingsLink = By.xpath("//div[contains(@style, 'display: flex;')]/div[contains(span/text(), 'Начинки')]");
-    private By bunsText = By.xpath("//h2[contains(text(), 'Булки')]");
-    private By saucesText = By.xpath("//h2[contains(text(), 'Соусы')]");
-    private By fillingsText = By.xpath("//h2[contains(text(), 'Начинки')]");
     private By modalOverlay = By.xpath("//div[@class='Modal_modal_overlay__x2ZCr']");
 
     public MainPage(WebDriver driver) {
@@ -35,24 +31,6 @@ public class MainPage {
     public void waitForPersonalAccountToBeClickable() {
         new WebDriverWait(driver, Duration.ofSeconds(100))
                 .until(ExpectedConditions.elementToBeClickable(personalAccount));
-    }
-    @Step("Waiting before element buns text will be clickable")
-    public void checkVisibilityBunsText() {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(), 'Булки')]")));
-        assert driver.findElement(bunsText).isDisplayed();
-    }
-    @Step("Waiting before element sauces text will be clickable")
-    public void checkVisibilitySaucesText() {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(), 'Соусы')]")));
-        assert driver.findElement(saucesText).isDisplayed();
-    }
-    @Step("Waiting before element fillings text will be clickable")
-    public void checkVisibilityFillingsText() {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(), 'Начинки')]")));
-        assert driver.findElement(fillingsText).isDisplayed();
     }
 
     @Step("Waiting before element Войти в аккаунт will be clickable")
@@ -69,17 +47,33 @@ public class MainPage {
     @Step("Waiting before element sauces will be clickable")
     public void waitForSaucesLinkToBeClickable() {
         new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.elementToBeClickable(saucesLink));
+                .until(ExpectedConditions.elementToBeClickable(saucesTab));
+    }
+
+    @Step("Waiting before element sauces will be selected")
+    public void waitForSaucesTabToBeSelected() {
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.attributeContains(saucesTab, "class", "current"));
+    }
+    @Step("Waiting before element fillings will be selected")
+    public void waitForFillingsTabToBeSelected() {
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.attributeContains(fillingsTab, "class", "current"));
+    }
+    @Step("Waiting before element buns will be selected")
+    public void waitForBunsTabToBeSelected() {
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.attributeContains(bunsTab, "class", "current"));
     }
     @Step("Waiting before element buns will be clickable")
     public void waitForBunsLinkToBeClickable() {
         new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.elementToBeClickable(bunsLink));
+                .until(ExpectedConditions.elementToBeClickable(bunsTab));
     }
     @Step("Waiting before element fillings will be clickable")
     public void waitForFillingsLinkToBeClickable() {
         new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.elementToBeClickable(fillingsLink));
+                .until(ExpectedConditions.elementToBeClickable(fillingsTab));
     }
     @Step("Waiting modal is disappearing")
     public void waitForModalOverlayToDisappear() {
